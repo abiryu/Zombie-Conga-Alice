@@ -11,7 +11,7 @@ class GameScene: SKScene {
     var lastTouchLocation: CGPoint?
     let zombieRotateRadiansPerSec: CGFloat = 4.0 * π
     let zombieAnimation: SKAction
-
+    
     override init(size: CGSize) {
         let maxAspectRatio:CGFloat = 16.0/9.0 // 1
         let playableHeight = size.width / maxAspectRatio // 2
@@ -220,15 +220,15 @@ class GameScene: SKScene {
     
     func zombieHitCat(cat: SKSpriteNode) {
         cat.removeFromParent()
-        runAction(SKAction.playSoundFileNamed("hitCat.wav",
-            waitForCompletion: false))
+        //runAction(SKAction.playSoundFileNamed("hitCat.wav",
+          //  waitForCompletion: false))
         
     }
     
     func zombieHitEnemy(enemy: SKSpriteNode) {
         enemy.removeFromParent()
-        runAction(SKAction.playSoundFileNamed("hitCatLady.wav",
-            waitForCompletion: false))
+        //runAction(SKAction.playSoundFileNamed("hitCatLady.wav",
+           // waitForCompletion: false))
     }
     
     func checkCollisions() {

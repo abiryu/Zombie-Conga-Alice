@@ -26,7 +26,6 @@
 		672D67C41BA468B800D36CDB /* zombie2.png in Resources */ = {isa = PBXBuildFile; fileRef = 672D67C31BA468B800D36CDB /* zombie2.png */; };
 		672D67C61BA468BE00D36CDB /* zombie3.png in Resources */ = {isa = PBXBuildFile; fileRef = 672D67C51BA468BE00D36CDB /* zombie3.png */; };
 		672D67C81BA468C300D36CDB /* zombie4.png in Resources */ = {isa = PBXBuildFile; fileRef = 672D67C71BA468C300D36CDB /* zombie4.png */; };
-		E288B4F81BD94D30008FAE27 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = E288B4F71BD94D30008FAE27 /* Sounds */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +62,6 @@
 		672D67C31BA468B800D36CDB /* zombie2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zombie2.png; sourceTree = "<group>"; };
 		672D67C51BA468BE00D36CDB /* zombie3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zombie3.png; sourceTree = "<group>"; };
 		672D67C71BA468C300D36CDB /* zombie4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zombie4.png; sourceTree = "<group>"; };
-		E288B4F71BD94D30008FAE27 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sounds; path = "../../../../../Volumes/NO NAME/iOS Games by Tutorials Second Edition 2/Chapter 3 - Actions/Resources/Sounds"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +112,6 @@
 				672D67BD1BA468A600D36CDB /* cat.png */,
 				672D67BF1BA468AA00D36CDB /* enemy.png */,
 				672D67C11BA468B200D36CDB /* zombie1.png */,
-				E288B4F71BD94D30008FAE27 /* Sounds */,
 				672D67B51BA4683900D36CDB /* background2.png */,
 				672D67931BA34A6A00D36CDB /* GameScene.swift */,
 				672277D21BC1251B00DD5851 /* MyUtils.swift */,
@@ -203,6 +200,7 @@
 				TargetAttributes = {
 					672D67891BA34A6A00D36CDB = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 9D35K98X7P;
 					};
 					672D67A21BA34A6A00D36CDB = {
 						CreatedOnToolsVersion = 6.4;
@@ -234,7 +232,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E288B4F81BD94D30008FAE27 /* Sounds in Resources */,
 				672D67BE1BA468A600D36CDB /* cat.png in Resources */,
 				672D67BC1BA4684A00D36CDB /* YouWin.png in Resources */,
 				672D67C81BA468C300D36CDB /* zombie4.png in Resources */,
@@ -398,9 +395,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Zombie Conga/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -408,9 +408,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Zombie Conga/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
