@@ -26,6 +26,11 @@
 		672D67C41BA468B800D36CDB /* zombie2.png in Resources */ = {isa = PBXBuildFile; fileRef = 672D67C31BA468B800D36CDB /* zombie2.png */; };
 		672D67C61BA468BE00D36CDB /* zombie3.png in Resources */ = {isa = PBXBuildFile; fileRef = 672D67C51BA468BE00D36CDB /* zombie3.png */; };
 		672D67C81BA468C300D36CDB /* zombie4.png in Resources */ = {isa = PBXBuildFile; fileRef = 672D67C71BA468C300D36CDB /* zombie4.png */; };
+		AAC5E7331BEBC90C00EF16CC /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAC5E72E1BEBC90C00EF16CC /* backgroundMusic.mp3 */; };
+		AAC5E7341BEBC90C00EF16CC /* hitCat.wav in Resources */ = {isa = PBXBuildFile; fileRef = AAC5E72F1BEBC90C00EF16CC /* hitCat.wav */; };
+		AAC5E7351BEBC90C00EF16CC /* hitCatLady.wav in Resources */ = {isa = PBXBuildFile; fileRef = AAC5E7301BEBC90C00EF16CC /* hitCatLady.wav */; };
+		AAC5E7361BEBC90C00EF16CC /* lose.wav in Resources */ = {isa = PBXBuildFile; fileRef = AAC5E7311BEBC90C00EF16CC /* lose.wav */; };
+		AAC5E7371BEBC90C00EF16CC /* win.wav in Resources */ = {isa = PBXBuildFile; fileRef = AAC5E7321BEBC90C00EF16CC /* win.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +67,11 @@
 		672D67C31BA468B800D36CDB /* zombie2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zombie2.png; sourceTree = "<group>"; };
 		672D67C51BA468BE00D36CDB /* zombie3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zombie3.png; sourceTree = "<group>"; };
 		672D67C71BA468C300D36CDB /* zombie4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zombie4.png; sourceTree = "<group>"; };
+		AAC5E72E1BEBC90C00EF16CC /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
+		AAC5E72F1BEBC90C00EF16CC /* hitCat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hitCat.wav; sourceTree = "<group>"; };
+		AAC5E7301BEBC90C00EF16CC /* hitCatLady.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hitCatLady.wav; sourceTree = "<group>"; };
+		AAC5E7311BEBC90C00EF16CC /* lose.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lose.wav; sourceTree = "<group>"; };
+		AAC5E7321BEBC90C00EF16CC /* win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = win.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +129,7 @@
 				672D67BB1BA4684A00D36CDB /* YouWin.png */,
 				672D67951BA34A6A00D36CDB /* GameViewController.swift */,
 				672D67971BA34A6A00D36CDB /* Main.storyboard */,
+				AAC5E72D1BEBC90C00EF16CC /* Sounds */,
 				672D679A1BA34A6A00D36CDB /* Images.xcassets */,
 				672D679C1BA34A6A00D36CDB /* LaunchScreen.xib */,
 				672D678D1BA34A6A00D36CDB /* Supporting Files */,
@@ -149,6 +160,18 @@
 				672D67A81BA34A6A00D36CDB /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AAC5E72D1BEBC90C00EF16CC /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				AAC5E72E1BEBC90C00EF16CC /* backgroundMusic.mp3 */,
+				AAC5E72F1BEBC90C00EF16CC /* hitCat.wav */,
+				AAC5E7301BEBC90C00EF16CC /* hitCatLady.wav */,
+				AAC5E7311BEBC90C00EF16CC /* lose.wav */,
+				AAC5E7321BEBC90C00EF16CC /* win.wav */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,17 +260,22 @@
 				672D67BE1BA468A600D36CDB /* cat.png in Resources */,
 				672D67BC1BA4684A00D36CDB /* YouWin.png in Resources */,
 				672D67C81BA468C300D36CDB /* zombie4.png in Resources */,
+				AAC5E7341BEBC90C00EF16CC /* hitCat.wav in Resources */,
 				672D67C21BA468B200D36CDB /* zombie1.png in Resources */,
 				672D67C01BA468AA00D36CDB /* enemy.png in Resources */,
 				672D679E1BA34A6A00D36CDB /* LaunchScreen.xib in Resources */,
 				672D67B81BA4683F00D36CDB /* MainMenu.png in Resources */,
 				672D67BA1BA4684300D36CDB /* YouLose.png in Resources */,
+				AAC5E7331BEBC90C00EF16CC /* backgroundMusic.mp3 in Resources */,
 				672D679B1BA34A6A00D36CDB /* Images.xcassets in Resources */,
 				672D67C61BA468BE00D36CDB /* zombie3.png in Resources */,
+				AAC5E7371BEBC90C00EF16CC /* win.wav in Resources */,
 				672D67B61BA4683900D36CDB /* background2.png in Resources */,
 				672D67991BA34A6A00D36CDB /* Main.storyboard in Resources */,
 				672D67C41BA468B800D36CDB /* zombie2.png in Resources */,
+				AAC5E7361BEBC90C00EF16CC /* lose.wav in Resources */,
 				672D67B41BA4683200D36CDB /* background1.png in Resources */,
+				AAC5E7351BEBC90C00EF16CC /* hitCatLady.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
