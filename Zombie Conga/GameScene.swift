@@ -111,13 +111,13 @@ class GameScene: SKScene {
         lastTouchLocation = touchLocation
         moveZombieToward(touchLocation)
     }
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        let touch = touches.first as! UITouch
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        let touch = touches.first as UITouch!
         let touchLocation = touch.locationInNode(self)
         sceneTouched(touchLocation)
     }
-    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
-        let touch = touches.first as! UITouch
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        let touch = touches.first as UITouch!
         let touchLocation = touch.locationInNode(self)
         sceneTouched(touchLocation)
     }
@@ -155,7 +155,7 @@ class GameScene: SKScene {
  
 
     func rotateSprite(sprite: SKSpriteNode, direction: CGPoint, rotateRadiansPerSec: CGFloat) {
-            let shortest = shortestAngleBetween(sprite.zRotation, velocity.angle)
+            let shortest = shortestAngleBetween(sprite.zRotation, angle2: velocity.angle)
             let foo = CGFloat(dt)
             let amountToRotate = min(rotateRadiansPerSec * CGFloat(dt), abs(shortest))
     
