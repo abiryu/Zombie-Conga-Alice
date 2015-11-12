@@ -11,7 +11,9 @@ class GameScene: SKScene {
     var lastTouchLocation: CGPoint?
     let zombieRotateRadiansPerSec: CGFloat = 4.0 * π
     let zombieAnimation: SKAction
+    var invincible: Bool = false
     
+
     override init(size: CGSize) {
         let maxAspectRatio:CGFloat = 16.0/9.0 // 1
         let playableHeight = size.width / maxAspectRatio // 2
@@ -220,15 +222,26 @@ class GameScene: SKScene {
     
     func zombieHitCat(cat: SKSpriteNode) {
         cat.removeFromParent()
-        //runAction(SKAction.playSoundFileNamed("hitCat.wav",
-          //  waitForCompletion: false))
+        runAction(SKAction.playSoundFileNamed("hitCat.wav",
+            waitForCompletion: false))
         
     }
     
     func zombieHitEnemy(enemy: SKSpriteNode) {
-        enemy.removeFromParent()
-        //runAction(SKAction.playSoundFileNamed("hitCatLady.wav",
-           // waitForCompletion: false))
+        //enemy.removeFromParent()
+        let blinkTimes = 10.0
+        let duration = 3.0
+        let blinkAction = SKAction.customActionWithDuration(duration) {
+            node, elapsedTime in
+            let slice = duration / blinkTimes
+            let remainder = Double(elapsedTime) % slice
+            node.hidden = remainder > slice / 2
+        }
+        invincible = true
+        
+        runAction(SKAction.playSoundFileNamed("hitCatLady.wav",
+            waitForCompletion: false))
+        zombie.runAction(blinkAction)
     }
     
     func checkCollisions() {
@@ -244,12 +257,17 @@ class GameScene: SKScene {
         }
         
         var hitEnemies: [SKSpriteNode] = []
-        enumerateChildNodesWithName("enemy") { node, _ in
-            let enemy = node as! SKSpriteNode
-            if CGRectIntersectsRect(
-                CGRectInset(node.frame, 20, 20), self.zombie.frame) {
-                hitEnemies.append(enemy)
+        
+        if invincible == false {
+
+            enumerateChildNodesWithName("enemy") { node, _ in
+                let enemy = node as! SKSpriteNode
+                if CGRectIntersectsRect(
+                    CGRectInset(node.frame, 20, 20), self.zombie.frame) {
+                        hitEnemies.append(enemy)
+
             }
+        }
         }
         for enemy in hitEnemies {
             zombieHitEnemy(enemy)
