@@ -224,11 +224,15 @@ class GameScene: SKScene {
         cat.removeFromParent()
         runAction(SKAction.playSoundFileNamed("hitCat.wav",
             waitForCompletion: false))
+        //cat.runAction(SKAction.repeatActionForever(
+        //SKAction.sequence([
+          //  ])
         
     }
     
     func zombieHitEnemy(enemy: SKSpriteNode) {
         //enemy.removeFromParent()
+        invincible = true
         let blinkTimes = 10.0
         let duration = 3.0
         let blinkAction = SKAction.customActionWithDuration(duration) {
@@ -237,11 +241,17 @@ class GameScene: SKScene {
             let remainder = Double(elapsedTime) % slice
             node.hidden = remainder > slice / 2
         }
-        invincible = true
+        print("before:", "\(invincible)")
+        //invincible = false
+        let setHidden = SKAction.runBlock() {
+            self.zombie.hidden = false
+            self.invincible = false
+        }
         
         runAction(SKAction.playSoundFileNamed("hitCatLady.wav",
             waitForCompletion: false))
-        zombie.runAction(blinkAction)
+        zombie.runAction(SKAction.sequence([blinkAction, setHidden]))
+        print("after:", "\(invincible)")
     }
     
     func checkCollisions() {
@@ -276,6 +286,7 @@ class GameScene: SKScene {
     override func didEvaluateActions() {
         checkCollisions()
     }
+
 }
 
 
