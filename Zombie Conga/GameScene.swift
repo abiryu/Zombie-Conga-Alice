@@ -237,7 +237,6 @@ class GameScene: SKScene {
             ))
 
         
-        
     }
     
     func zombieHitEnemy(enemy: SKSpriteNode) {
@@ -296,7 +295,7 @@ class GameScene: SKScene {
     override func didEvaluateActions() {
         checkCollisions()
     }
-    
+
     func moveTrain() {
         var targetPosition = zombie.position
         
@@ -308,8 +307,8 @@ class GameScene: SKScene {
                 let direction = self.velocity
                 let amountToMovePerSec = offset / self.catMovePointsPerSecond
                 let amountToMove = amountToMovePerSec /  actionDuration
-                let moveAction = SKAction.moveBy(offset, duration: actionDuration)
-                node.runAction(moveAction)
+                //let moveAction = SKAction.moveBy(offset, duration: actionDuration)
+                //node.runAction(moveAction)
             }
             targetPosition = node.position
         }
