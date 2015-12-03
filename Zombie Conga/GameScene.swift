@@ -93,6 +93,8 @@ class GameScene: SKScene {
         boundsCheckZombie()
         rotateSprite(zombie, direction: velocity, rotateRadiansPerSec: zombieRotateRadiansPerSec)
         //checkCollisions()
+        moveTrain()
+        
 
     }
     
@@ -216,9 +218,9 @@ class GameScene: SKScene {
             [scaleUp, scaleDown, scaleUp, scaleDown])
         let group = SKAction.group([fullScale, fullWiggle])
         let groupWait = SKAction.repeatAction(group, count: 10)
-        //let disappear = SKAction.scaleTo(0, duration: 0.5)
-        //let removeFromParent = SKAction.removeFromParent()
-        let actions = [appear, groupWait]
+        let disappear = SKAction.scaleTo(0, duration: 0.5)
+        let removeFromParent = SKAction.removeFromParent()
+        let actions = [appear, groupWait, disappear, removeFromParent]
         cat.runAction(SKAction.sequence(actions))
     }
     
@@ -298,17 +300,19 @@ class GameScene: SKScene {
 
     func moveTrain() {
         var targetPosition = zombie.position
+
         
         enumerateChildNodesWithName("train") {
             node, _ in
+            print("train")
             if !node.hasActions() {
-                let actionDuration : CGFloat = 0.3
-                let offset = self.position - self.zombie.position
-                let direction = self.velocity
-                let amountToMovePerSec = offset / self.catMovePointsPerSecond
-                let amountToMove = amountToMovePerSec /  actionDuration
-                //let moveAction = SKAction.moveBy(offset, duration: actionDuration)
-                //node.runAction(moveAction)
+                let actionDuration = 0.3
+                let offset = targetPosition - node.position
+                let direction = offset.normalized()
+                let amountToMovePerSec = direction * self.catMovePointsPerSecond
+                let amountToMove = amountToMovePerSec *  CGFloat(actionDuration)
+                let moveAction = SKAction.moveByX(amountToMove.x, y: amountToMove.y, duration: actionDuration)
+                node.runAction(moveAction)
             }
             targetPosition = node.position
         }
