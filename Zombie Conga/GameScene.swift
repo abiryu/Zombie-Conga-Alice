@@ -229,14 +229,10 @@ class GameScene: SKScene {
         runAction(SKAction.playSoundFileNamed("hitCat.wav",
             waitForCompletion: false))
         cat.name = "train"
-        cat.removeAllActions()
         cat.setScale(1)
         cat.zRotation = 0
-        cat.runAction(SKAction.repeatActionForever(
-            SKAction.sequence([
-                SKAction.colorizeWithColor(SKColor.greenColor(), colorBlendFactor: 1.0, duration: 0.2)
-                ])
-            ))
+        cat.removeAllActions()
+        cat.runAction(SKAction.colorizeWithColor(SKColor.greenColor(), colorBlendFactor: 1.0, duration: 0.2))
 
         
     }
@@ -302,10 +298,9 @@ class GameScene: SKScene {
         var targetPosition = zombie.position
 
         
-        enumerateChildNodesWithName("train") {
-            node, _ in
-            print("train")
+        enumerateChildNodesWithName("train") { node, stop in
             if !node.hasActions() {
+                print("train")
                 let actionDuration = 0.3
                 let offset = targetPosition - node.position
                 let direction = offset.normalized()
