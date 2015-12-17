@@ -101,6 +101,8 @@ class GameScene: SKScene {
         if lives <= 0 && !gameOver {
             gameOver = true
             print("You lose!")
+            
+            let gameOverScene = GameOverScene(size: size, won: false)
         }
         
 
@@ -323,6 +325,7 @@ class GameScene: SKScene {
             }
             targetPosition = node.position
         }
+        //let gameOverScene = gameOverScene(size: size, won: true)
         if trainCount >= 30 && !gameOver {
             gameOver = true
             print("You win!")
