@@ -15,7 +15,6 @@ class GameScene: SKScene {
     let catMovePointsPerSecond : CGFloat = 480.0
     var lives = 5
     var gameOver = false
-    var trainCount = 0
     
 
     override init(size: CGSize) {
@@ -95,14 +94,17 @@ class GameScene: SKScene {
         
         boundsCheckZombie()
         rotateSprite(zombie, direction: velocity, rotateRadiansPerSec: zombieRotateRadiansPerSec)
-        //checkCollisions()
         moveTrain()
+        //print("\(gameOver)")
         
-        if lives <= 0 && !gameOver {
+        if lives <= 4 && !gameOver {
             gameOver = true
-            print("You lose!")
-            
             let gameOverScene = GameOverScene(size: size, won: false)
+            gameOverScene.scaleMode = scaleMode
+            let reveal = SKTransition.flipHorizontalWithDuration(0.5)
+            view?.presentScene(gameOverScene, transition: reveal)
+            print("You lose!")
+        
         }
         
 
@@ -271,7 +273,8 @@ class GameScene: SKScene {
         //print("after:", "\(invincible)")
         loseCats()
         lives--
-        print(lives)
+
+
     }
     
     func checkCollisions() {
@@ -309,8 +312,10 @@ class GameScene: SKScene {
 
     func moveTrain() {
         var targetPosition = zombie.position
+        var trainCount = 0
         enumerateChildNodesWithName("train") { node, stop in
-            self.trainCount += 1
+            trainCount += 1
+            print("\(trainCount)")
             //print(self.trainCount)
             if !node.hasActions() {
                 //print("train")
@@ -328,7 +333,12 @@ class GameScene: SKScene {
         //let gameOverScene = gameOverScene(size: size, won: true)
         if trainCount >= 30 && !gameOver {
             gameOver = true
+            //print("\(trainCount)")
             print("You win!")
+            let gameOverScene = GameOverScene(size: size, won: true)
+            let reveal = SKTransition.flipHorizontalWithDuration(0.5)
+            view?.presentScene(gameOverScene, transition: reveal)
+            
         }
     }
     

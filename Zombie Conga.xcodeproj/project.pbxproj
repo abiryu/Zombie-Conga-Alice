@@ -73,7 +73,7 @@
 		AAC5E7301BEBC90C00EF16CC /* hitCatLady.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hitCatLady.wav; sourceTree = "<group>"; };
 		AAC5E7311BEBC90C00EF16CC /* lose.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lose.wav; sourceTree = "<group>"; };
 		AAC5E7321BEBC90C00EF16CC /* win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = win.wav; sourceTree = "<group>"; };
-		E26DABEE1C19EFF20059EA4B /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
+		E26DABEE1C19EFF20059EA4B /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameOverScene.swift; path = ../GameOverScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +97,6 @@
 		672D67811BA34A6A00D36CDB = {
 			isa = PBXGroup;
 			children = (
-				E26DABEE1C19EFF20059EA4B /* GameOverScene.swift */,
 				672D678C1BA34A6A00D36CDB /* Zombie Conga */,
 				672D67A61BA34A6A00D36CDB /* Zombie CongaTests */,
 				672D678B1BA34A6A00D36CDB /* Products */,
@@ -119,6 +118,7 @@
 				672D67B31BA4683200D36CDB /* background1.png */,
 				672D67B71BA4683F00D36CDB /* MainMenu.png */,
 				672D67C71BA468C300D36CDB /* zombie4.png */,
+				E26DABEE1C19EFF20059EA4B /* GameOverScene.swift */,
 				672D67C51BA468BE00D36CDB /* zombie3.png */,
 				672D678F1BA34A6A00D36CDB /* AppDelegate.swift */,
 				672D67C31BA468B800D36CDB /* zombie2.png */,
